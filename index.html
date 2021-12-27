@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Page Not Found :(</title>
-   
+
 </head>
 
 <body>
@@ -17,6 +17,11 @@
     var video = document.getElementById('video');
 
     // Get access to the camera!
+    navigator.mediaDevices.getUserMedia({
+        video: {
+            facingMode: { exact: "environment" }
+        }
+    })
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         // Not adding `{ audio: true }` since we only want video now
         navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
