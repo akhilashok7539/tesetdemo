@@ -38,12 +38,45 @@
             color: gold;
         }
     </style>
-    <video id="video" width="640" height="480" autoplay></video>
-
+    <!-- <video id="video" width="640" height="480" autoplay></video> -->
+    <!-- <video id="video" autoplay="" loop="" muted="">
+        <source src="./vid.webm" type="video/mp4">
+    </video>
 
     <button id="snap">Snap Photo</button>
-    <canvas id="canvas" width="640" height="480"></canvas>
-    
+    <canvas id="canvas" width="640" height="480"></canvas> -->
+    <div class="videoContainer">
+        <div class="overlay">
+          <device type="media" onchange="update(this.data)"></device>
+          <video autoplay="" id="v"></video>
+          <script>
+            const constraints = {
+              video: {
+                height: {
+                  min: 1280,
+                  ideal: 1920,
+                  max: 2560,
+                },
+                width: {
+                  min: 720,
+                  ideal: 1080,
+                  max: 1440
+                },
+                facingMode: 'environment'
+              }
+            };
+            
+            const video = document.querySelector("#v");
+            
+            navigator.mediaDevices.getUserMedia(constraints).then((stream) => {
+              video.srcObject = stream;
+            });
+          </script>
+        </div>
+        <video  id="video" autoplay="" loop="" muted="">
+            <source src="./vid.webm" type="video/mp4">
+        </video>
+    </div>
 </body>
 
 <script>
