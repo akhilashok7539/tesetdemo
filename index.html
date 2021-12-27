@@ -38,37 +38,18 @@
             color: gold;
         }
     </style>
-    <video id="video" width="640" height="480" autoplay></video>
+    <!-- <video id="video" width="640" height="480" autoplay></video> -->
+
+    <video controls width="640" height="480" autoplay>
+        <source src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/1080/Big_Buck_Bunny_1080_10s_1MB.mp4#t=0.1" type="video/mp4" />
+      </video>
     <!-- <button id="snap">Snap Photo</button>
     <canvas id="canvas" width="640" height="480"></canvas> -->
-    <div id="myModal" class="modal fade" role="dialog" style="background-color: rgba(255, 0, 0, 0);">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <!--         <h4 class="modal-title">Modal Header</h4> -->
-                </div>
-                <div class="modal-body text-center">
-                    <h1>Full screen Transparent Bootstrap Modal</h1>
-                    <p>FEEL FRREE TO GET YOUR MODAL CODE HERE FOLKS.</p>
-                    <a class="pre-order-btn" href="#">GET THE MODAL CODE</a>
-                </div>
-                <div class="modal-footer">
-                    <!--         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
-                </div>
-            </div>
-
-        </div>
-    </div>
+    
 </body>
 
 <script>
-    $(document).ready(function(){       
-   $('#myModal').modal('show');
-    }); 
-    var video = document.getElementById('video');
-
+   
     // Get access to the camera!
 
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
